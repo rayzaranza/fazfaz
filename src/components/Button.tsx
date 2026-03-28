@@ -19,7 +19,7 @@ export function Button({
     <button
       type="button"
       className={cn(
-        "h-10 text-lg rounded-2xl px-4 cursor-pointer gap-2",
+        "h-10 text-lg rounded-2xl px-4 cursor-pointer gap-2 flex place-items-center",
         "shadow-elevated hover:shadow-elevated-hover active:shadow-inset",
         "hover:-translate-y-px active:translate-y-0.5 transform-gpu transition",
         variants[variant],

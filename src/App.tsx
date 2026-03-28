@@ -2,6 +2,7 @@ import { Button } from "./components/Button";
 import { Icon } from "./components/Icon";
 import { Plus, ArrowLeft, Trash } from "lucide-react";
 import { Text } from "./components/Text";
+import { Input } from "./components/Input";
 
 export function App() {
   return (
@@ -33,17 +34,11 @@ export function App() {
           <Icon icon={Trash} size="small" />
         </div>
 
-        <p className="max-w-2xl text-xl">
-          sdhai ygsdo haodhy ophs odgasd iogasdh asd gaosfc asdaisdais naaois7
-          aosasdiasdaggadga asdgaysdgai agsdaisg gs sdgaa aidad agsda s
-        </p>
+        <Input label="email" />
       </div>
 
       <div className="flex gap-4">
-        <Button>
-          <Icon icon={Plus} />
-          botão
-        </Button>
+        <Button icon={Plus}></Button>
         <Button variant="accent">botão</Button>
         <Button variant="danger">botão</Button>
       </div>

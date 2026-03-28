@@ -71,6 +71,8 @@
     inset 0 1px 0 var(--color-highlight-hover), 0 6px 0 var(--color-shadow);
   --shadow-inset:
     inset 0 -1px 0 var(--color-highlight), 0 -2px 0 var(--color-shadow);
+  --shadow-inset-hover:
+    inset 0 -1px 0 var(--color-highlight-hover), 0 -2px 0 var(--color-shadow);
 }
 
 @theme inline {
@@ -125,4 +127,12 @@
 
 @utility shadow-inset {
   box-shadow: var(--shadow-inset);
+}
+
+@utility shadow-inset-hover {
+  box-shadow: var(--shadow-inset-hover);
+}
+
+.squircle {
+  corner-shape: squircle;
 }

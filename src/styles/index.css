@@ -1,8 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Geom:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
 
-button {
-  corner-shape: squircle;
+@layer base {
+  @font-face {
+    font-family: "Geo";
+    src: url("/fonts/Geo-Regular.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  :root {
+    font-size: 120%;
+  }
+
+  button {
+    outline-color: var(--color-violet-400);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-violet-400);
+    outline-offset: 3px;
+  }
 }
 
 @theme {
@@ -55,6 +71,8 @@ button {
     inset 0 1px 0 var(--color-highlight-hover), 0 6px 0 var(--color-shadow);
   --shadow-inset:
     inset 0 -1px 0 var(--color-highlight), 0 -2px 0 var(--color-shadow);
+  --shadow-inset-hover:
+    inset 0 -1px 0 var(--color-highlight-hover), 0 -2px 0 var(--color-shadow);
 }
 
 @theme inline {
@@ -64,16 +82,16 @@ button {
   --color-surface-hover: var(--color-zinc-700);
   --color-surface-pressed: var(--color-zinc-950);
 
-  --color-accent: var(--color-violet-800);
-  --color-accent-hover: var(--color-violet-700);
-  --color-accent-pressed: var(--color-violet-950);
+  --color-surface-accent: var(--color-violet-800);
+  --color-surface-accent-hover: var(--color-violet-700);
+  --color-surface-accent-pressed: var(--color-violet-950);
 
-  --color-danger: var(--color-rose-800);
-  --color-danger-hover: var(--color-rose-700);
-  --color-danger-pressed: var(--color-rose-950);
+  --color-surface-danger: var(--color-rose-800);
+  --color-surface-danger-hover: var(--color-rose-700);
+  --color-surface-danger-pressed: var(--color-rose-950);
 
   --color-content: var(--color-zinc-100);
-  --color-content-secondary: var(--color-zinc-500);
+  --color-content-secondary: var(--color-zinc-400);
   --color-content-disabled: var(--color-zinc-600);
 }
 
@@ -85,13 +103,13 @@ button {
     --color-surface-hover: var(--color-zinc-300);
     --color-surface-pressed: var(--color-zinc-400);
 
-    --color-accent: var(--color-violet-800);
-    --color-accent-hover: var(--color-violet-600);
-    --color-accent-pressed: var(--color-violet-950);
+    --color-surface-accent: var(--color-violet-500);
+    --color-surface-accent-hover: var(--color-violet-600);
+    --color-surface-accent-pressed: var(--color-violet-950);
 
-    --color-danger: var(--color-rose-800);
-    --color-danger-pressed: var(--color-rose-950);
-    --color-danger-hover: var(--color-rose-600);
+    --color-surface-danger: var(--color-rose-800);
+    --color-surface-danger-pressed: var(--color-rose-950);
+    --color-surface-danger-hover: var(--color-rose-600);
 
     --color-content: var(--color-zinc-900);
     --color-content-secondary: var(--color-zinc-600);
@@ -102,9 +120,19 @@ button {
 @utility shadow-elevated {
   box-shadow: var(--shadow-elevated);
 }
+
 @utility shadow-elevated-hover {
   box-shadow: var(--shadow-elevated-hover);
 }
+
 @utility shadow-inset {
   box-shadow: var(--shadow-inset);
+}
+
+@utility shadow-inset-hover {
+  box-shadow: var(--shadow-inset-hover);
+}
+
+.squircle {
+  corner-shape: squircle;
 }

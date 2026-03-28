@@ -1,14 +1,19 @@
 import { Button } from "./components/Button";
 import { Icon } from "./components/Icon";
 import { Plus, ArrowLeft, Trash } from "lucide-react";
+import { Text } from "./components/Text";
 
 export function App() {
   return (
     <div className="h-dvh grid place-content-center gap-8">
       <div className="flex flex-col gap-4">
-        <h1 className="text-6xl">cabeçalho 1</h1>
-        <h2 className="text-5xl">cabeçalho 2</h2>
-        <h2 className="text-4xl">cabeçalho 3</h2>
+        <div className="flex flex-col gap-1">
+          <Text variant="h1">título 1</Text>
+          <Text variant="h2">título 2</Text>
+          <Text variant="h3">título 3</Text>
+          <Text variant="body">corpo</Text>
+          <Text variant="caption">legenda</Text>
+        </div>
 
         <div className="flex gap-5 place-items-center">
           <Icon icon={Plus} size="large" />

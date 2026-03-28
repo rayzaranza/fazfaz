@@ -2,14 +2,13 @@ import { cn } from "../utils/classNames";
 import { type ReactNode } from "react";
 
 interface TextProps {
-  variant?: "body" | "caption" | "label" | "h1" | "h2" | "h3";
+  variant?: "body" | "caption" | "h1" | "h2" | "h3";
   className?: string;
   children: ReactNode;
 }
 
 const variants = {
   body: { as: "p", classes: "text-base" },
-  label: { as: "label", classes: "text-base" },
   caption: { as: "span", classes: "text-sm text-content-secondary" },
   h1: { as: "h1", classes: "text-6xl" },
   h2: { as: "h2", classes: "text-5xl" },

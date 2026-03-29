@@ -1,6 +1,5 @@
 import { ArrowLeft, Home, TvIcon } from "lucide-react";
 import { Button } from "./components/Button";
-import { Plus } from "lucide-react";
 import { Text } from "./components/Text";
 import { Input } from "./components/Input";
 import { Card } from "./components/Card";

@@ -8,11 +8,15 @@ import path from "path";
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    tanstackRouter({ target: "react", autoCodeSplitting: true }),
+    tanstackRouter({
+      target: "react",
+      autoCodeSplitting: true,
+      generatedRouteTree: "./src/lib/routeTree.gen.ts",
+    }),
     react(),
     svgr(),
   ],
-resolve: {
+  resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },

@@ -10,15 +10,16 @@ interface CardProps {
 
 export function Card({ icon = TreePalm, title }: CardProps) {
   return (
-    <div
+    <article
       className={cn(
         "squircle flex min-w-36 flex-col gap-7 rounded-3xl p-4 pb-3",
-        "bg-surface",
-        "shadow-elevated",
+        "bg-surface hover:bg-surface-hover active:bg-surface-pressed",
+        "shadow-elevated hover:shadow-elevated-hover active:shadow-inset",
+        "transition duration-200 ease-out",
       )}
     >
       <Icon icon={icon} />
       <Text className="text-xl">{title}</Text>
-    </div>
+    </article>
   );
 }

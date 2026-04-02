@@ -1,7 +1,9 @@
+import { getUser } from "@/services/auth";
 import { type RouterContext } from "@/types/router";
 import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
 
 export const Route = createRootRouteWithContext<RouterContext>()({
+  beforeLoad: async () => getUser(),
   component: Root,
 });
 

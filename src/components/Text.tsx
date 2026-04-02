@@ -10,9 +10,9 @@ interface TextProps {
 const variants = {
   body: { as: "p", classes: "text-base" },
   caption: { as: "span", classes: "text-sm text-content-secondary" },
-  h1: { as: "h1", classes: "text-6xl" },
-  h2: { as: "h2", classes: "text-5xl" },
-  h3: { as: "h3", classes: "text-4xl" },
+  h1: { as: "h1", classes: "text-5xl" },
+  h2: { as: "h2", classes: "text-4xl" },
+  h3: { as: "h3", classes: "text-3xl" },
 } as const;
 
 export function Text({ variant = "body", className, children }: TextProps) {

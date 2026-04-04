@@ -1,6 +1,7 @@
 import { getUser } from "@/services/auth";
 import { type RouterContext } from "@/types/router";
 import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
+import { Toaster } from "sonner";
 
 export const Route = createRootRouteWithContext<RouterContext>()({
   beforeLoad: async () => getUser(),
@@ -8,5 +9,10 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 });
 
 function Root() {
-  return <Outlet />;
+  return (
+    <>
+      <Toaster />
+      <Outlet />
+    </>
+  );
 }

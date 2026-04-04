@@ -29,6 +29,8 @@
   --color-content-secondary: oklch(0.75 0.02 271);
   --color-content-inverse: oklch(0.215 0.03 296);
   --color-content-on-accent: oklch(0.95 0.01 271);
+  --color-content-disabled: oklch(0.3 0.01 271);
+  --color-content-danger: oklch(0.6 0.2 24);
 
   --color-container: oklch(0.22 0.02 296);
   --color-container-hover: oklch(0.26 0.02 296);
@@ -107,9 +109,9 @@
     inset 0 var(--thickness-shadow) 0 0 var(--color-shadow);
 
   --shadow-blocky-inset-hover:
-    inset 0 calc(var(--thickness-highlight-hover) * -1) 0 0
+    inset 0 calc(var(--thickness-highlight) * -1) 0 0
       var(--color-highlight-hover),
-    inset 0 var(--thickness-shadow-hover) 0 0 var(--color-shadow);
+    inset 0 var(--thickness-shadow) 0 0 var(--color-shadow);
 
   --shadow-blocky-inset-active:
     inset 0 calc(var(--thickness-highlight-active) * -1) 0 0

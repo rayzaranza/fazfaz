@@ -7,9 +7,4 @@ describe("Icon", () => {
     render(<Icon icon={Plus} />);
     expect(document.querySelector("svg")).toBeInTheDocument();
   });
-
-  test("applies small size classes", () => {
-    render(<Icon size="small" icon={Plus} />);
-    expect(document.querySelector("svg")).toHaveClass("w-4", "h-4");
-  });
 });

@@ -13,7 +13,7 @@ import { Route as EntrarRouteImport } from './../routes/entrar'
 import { Route as AuthenticatedRouteImport } from './../routes/_authenticated'
 import { Route as IndexRouteImport } from './../routes/index'
 import { Route as AuthenticatedProjetosIndexRouteImport } from './../routes/_authenticated/projetos.index'
-import { Route as AuthenticatedProjetosIdRouteImport } from './../routes/_authenticated/projetos.$id'
+import { Route as AuthenticatedProjetosIdRouteRouteImport } from './../routes/_authenticated/projetos/$id/route'
 
 const EntrarRoute = EntrarRouteImport.update({
   id: '/entrar',
@@ -35,22 +35,23 @@ const AuthenticatedProjetosIndexRoute =
     path: '/projetos/',
     getParentRoute: () => AuthenticatedRoute,
   } as any)
-const AuthenticatedProjetosIdRoute = AuthenticatedProjetosIdRouteImport.update({
-  id: '/projetos/$id',
-  path: '/projetos/$id',
-  getParentRoute: () => AuthenticatedRoute,
-} as any)
+const AuthenticatedProjetosIdRouteRoute =
+  AuthenticatedProjetosIdRouteRouteImport.update({
+    id: '/projetos/$id',
+    path: '/projetos/$id',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/entrar': typeof EntrarRoute
-  '/projetos/$id': typeof AuthenticatedProjetosIdRoute
+  '/projetos/$id': typeof AuthenticatedProjetosIdRouteRoute
   '/projetos/': typeof AuthenticatedProjetosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/entrar': typeof EntrarRoute
-  '/projetos/$id': typeof AuthenticatedProjetosIdRoute
+  '/projetos/$id': typeof AuthenticatedProjetosIdRouteRoute
   '/projetos': typeof AuthenticatedProjetosIndexRoute
 }
 export interface FileRoutesById {
@@ -58,7 +59,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteWithChildren
   '/entrar': typeof EntrarRoute
-  '/_authenticated/projetos/$id': typeof AuthenticatedProjetosIdRoute
+  '/_authenticated/projetos/$id': typeof AuthenticatedProjetosIdRouteRoute
   '/_authenticated/projetos/': typeof AuthenticatedProjetosIndexRoute
 }
 export interface FileRouteTypes {
@@ -115,19 +116,19 @@ declare module '@tanstack/react-router' {
       id: '/_authenticated/projetos/$id'
       path: '/projetos/$id'
       fullPath: '/projetos/$id'
-      preLoaderRoute: typeof AuthenticatedProjetosIdRouteImport
+      preLoaderRoute: typeof AuthenticatedProjetosIdRouteRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
   }
 }
 
 interface AuthenticatedRouteChildren {
-  AuthenticatedProjetosIdRoute: typeof AuthenticatedProjetosIdRoute
+  AuthenticatedProjetosIdRouteRoute: typeof AuthenticatedProjetosIdRouteRoute
   AuthenticatedProjetosIndexRoute: typeof AuthenticatedProjetosIndexRoute
 }
 
 const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
-  AuthenticatedProjetosIdRoute: AuthenticatedProjetosIdRoute,
+  AuthenticatedProjetosIdRouteRoute: AuthenticatedProjetosIdRouteRoute,
   AuthenticatedProjetosIndexRoute: AuthenticatedProjetosIndexRoute,
 }
 
